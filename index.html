@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Creative</title>
+    <link rel="stylesheet" href="assets/scss/index.scss">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="line"></div>
+                    <a href="#home">
+                        <img src="/assets/img/site-creative-logo.svg" alt="logo">
+                    </a>
+                </div>
+                <input type="checkbox" id="burger-menu-toggler">
+                <div class="burger-menu">
+                    <label for="burger-menu-toggler">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <ul class="menu">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section" id="home">
+            <div class="box">
+                <h2>Актуальное</h2>
+            </div>
+        </section>
+        <section class="section" id="services">
+            <div class="box">
+                <h2>Наши услуги</h2>
+                <div class="services-body">
+                    <div class="service-item">
+                        <p>Создание сайтов</p>
+                    </div>
+                    <div class="service-item">
+                        <p>Продвижение сайтов</p>
+                    </div>
+                    <div class="service-item">
+                        <p>SMM</p>
+                    </div>
+                    <div class="service-item">
+                        <p>Контекстная реклама</p>
+                    </div>
+                    <div class="service-item">
+                        <p>Наполнение сайтов</p>
+                    </div>
+                    <div class="service-item">
+                        <p>Дизайн услуги</p>
+                    </div>
+                    <div class="service-item">
+                        <p>Обслуживание сайтов</p>
+                    </div>
+                    <div class="service-item">
+                        <p>Модернизация сайта</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="box">
+                <h2>Третий</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nulla reprehenderit facilis voluptates perferendis fuga.  amet consectetur adipisicing elit. Ipsam nulla reprehenderit facilis voluptates perferendis fuga.</p>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <div class="box">
+                <h2>Четвертый</h2>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="assets/libs/gsap.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/index.js"></script>
+    <script>
+        let sections = [];
+
+        document.querySelectorAll('section').forEach(section => sections.push(section.getAttribute('id')))
+
+        let options = {
+            main: document.querySelector('main'),
+            sections: sections,
+            pause: 1000,
+            menu: document.querySelector('.menu')
+        }
+        let paginator = new Paginator(options);
+
+        if (location.hash && document.querySelector(location.hash)) {
+            paginator.showNext(location.hash.replace('#', ''))
+        } else {
+            paginator.showNext('home')
+        }
+    </script>
+</body>
+</html>
