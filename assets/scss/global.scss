@@ -5,54 +5,62 @@
 }
 
 html, body {
-    overflow: hidden;
     min-width: 320px;
-    text-align: center;
-    background: orange;
     font-family: sans-serif;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    position: fixed;
-    height: 100vh;
+    min-height: 100vh;
+    background: orange;
+
+    &.js-enabled {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+
+        & > main > section {
+            position: absolute;
+            display: none;
+            
+            &.active {
+                z-index: 10;
+                display: flex;
+            }
+        }
+    }
 }
 
 main {
-    min-height: 100vh;
-    display: block;
+    width: inherit;
+    height: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
 }
 
 section {
-    position: absolute;
+    display: flex;
     top: 0;
     left: 0;
-    background: orange;
     height: 100vh;
     width: 100%;
-    display: none;
-    backface-visibility: hidden;
-
-    &.active {
-        display: flex;
-        z-index: 10;
-    }
+    padding: 0 15px;
+    background: orange;
 
     & h2 {
         align-self: flex-start;
     }
 }
 
-.container {
-    width: 100%;
-    max-width: 1000px;
-    padding: 0 15px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.box {
+.content {
     width: 100%;
     margin: auto 0;
     line-height: 1.7;
     display: flex;
     flex-flow: column nowrap;
     text-align: left;
+    // background: orangered;
+    padding: 10px;
 }

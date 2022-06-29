@@ -5,12 +5,13 @@ class Paginator extends Animator {
         this.sections = options.sections
         this.pause = options.pause
         this.start = this.sections[0]
-        this.canGo = true
+        this.canGo = false
         this.yDown = null
         this.menu = options.menu
         this.listen()
         this.headerTimeline = headerTimeline
         // this.servicesTimeline = servicesTimeline
+        document.body.classList.add('js-enabled');
     }
 
     listen() {

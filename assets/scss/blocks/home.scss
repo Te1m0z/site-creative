@@ -1,3 +1,30 @@
 section#home {
-  
+    font-size: 30px;
+
+    & .home-benefits {
+        display: flex;
+
+        &_item {
+            margin-right: 50px;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 22px;
+            background: orangered;
+            padding: 0 5px;
+            border-radius: 4px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    & .text {
+        margin-top: 40px;
+        color: #fff;
+
+        & span {
+            font-size: 40px;
+        }
+    }
 }
