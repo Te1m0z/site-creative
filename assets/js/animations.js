@@ -7,8 +7,13 @@ class Animator {
 
     homeShow() {
         gsap.timeline({
-            onStart: () => document.querySelector('#home').classList.add("active"),
-            onComplete: () => this.canGo = true,
+            onStart: () => {
+                document.querySelector('#home').classList.add("active")
+                window.location.hash = '#home'
+            },
+            onComplete: () => {
+                this.canGo = true
+            },
             defaults: { ease: 'Power4.easeInOut' }
         })
         .fromTo('#home .home-benefits_item', { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 1.5, stagger: 0.1 })
@@ -27,8 +32,13 @@ class Animator {
     servicesShow() {
 
         gsap.timeline({
-            onStart: () => document.querySelector('#services').classList.add("active"),
-            onComplete: () => this.canGo = true,
+            onStart: () => {
+                document.querySelector('#services').classList.add("active")
+                window.location.hash = '#services'
+            },
+            onComplete: () => {
+                this.canGo = true
+            },
             defaults: { duration: 1, ease: 'Power4.easeInOut' }
         })
         .fromTo('#services h2', { x: 40, opacity: 0 }, { x: 0, opacity: 1 })
@@ -49,8 +59,13 @@ class Animator {
     aboutShow() {
 
         gsap.timeline({
-            onStart: () => document.querySelector('#about').classList.add("active"),
-            onComplete: () => this.canGo = true,
+            onStart: () => {
+                document.querySelector('#about').classList.add("active")
+                window.location.hash = '#about'
+            },
+            onComplete: () => {
+                this.canGo = true
+            },
             defaults: { duration: 1, ease: 'Power4.easeInOut' }
         })
         .fromTo('#about h2', { x: 40, opacity: 0 }, { x: 0, opacity: 1 })
@@ -71,8 +86,13 @@ class Animator {
     contactShow() {
 
         gsap.timeline({
-            onStart: () => document.querySelector('#contact').classList.add("active"),
-            onComplete: () => this.canGo = true,
+            onStart: () => {
+                document.querySelector('#contact').classList.add("active")
+                window.location.hash = '#contact'
+            },
+            onComplete: () => {
+                this.canGo = true
+            },
             defaults: { duration: 1, ease: 'Power4.easeInOut' }
         })
         .fromTo('#contact h2', { x: 40, opacity: 0 }, { x: 0, opacity: 1 })

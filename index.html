@@ -54,6 +54,7 @@
                 </div>
                 <p class="text">
                     <span>«Сайт Креатив»</span> — это веб-студия широкого профиля, предоставляющая всевозможные услуги, связанные с созданием и последующим развитием сайта. Работая в этой сфере более семи лет, мы накопили немалый багаж опыта, став асами в вопросах разработки и продвижения сайтов.
+                    <a href="#reviews">Отзывы</a>
                 </p>
             </div>
         </section>
@@ -134,6 +135,12 @@
         } else {
             paginator.showNext('home')
         }
+
+        document.querySelectorAll('a').forEach(link => {
+            link.onclick = (event) => {
+                console.dir(event.target)
+            }
+        })
     </script>
 </body>
 
